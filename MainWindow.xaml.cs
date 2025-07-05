@@ -56,6 +56,9 @@ namespace MatchGame
                     string nextEmoji = animalEmoji[index];
                     textBlock.Text = nextEmoji;
                     animalEmoji.RemoveAt(index);
+
+                    // Ensure the emoji is visible at the start of a new game
+                    textBlock.Visibility = Visibility.Visible;
                 }
             }
             timer.Start();
@@ -92,7 +95,7 @@ namespace MatchGame
             if (matchesFound == 8)
             {
                 timer.Stop();
-                //timeTextblock.Text = timeTextblock.Text + " - Play again?";
+                timeTextblock.Text = timeTextblock.Text + " - You won";
             }
         }
 
